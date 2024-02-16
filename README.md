@@ -6,7 +6,7 @@ go get .
 ```
 ## Start the server
 ```
-go run cmd/yofioChallenge/main.go
+go run main.go
 ```
 The server starts at localhost:8080
 ## Usage
