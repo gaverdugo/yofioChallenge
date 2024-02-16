@@ -25,3 +25,12 @@ The server will return a response with how many of each credits can be assigned 
     "credit_type_700": 8
 }
 ```
+## Running tests
+All tests can be ran by using the following command in the project's root directory
+```
+go test ./...
+```
+**Warning** If you are using `zsh`, the shell will try to match `...` to a folder, so you must escape the pattern.
+```
+go test ./\...
+```
