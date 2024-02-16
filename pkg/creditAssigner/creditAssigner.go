@@ -7,7 +7,7 @@ import (
 
 type CreditAssigner struct{}
 
-func Assign(investment int32) (int32, int32, int32, error) {
+func (CreditAssigner) Assign(investment int32) (int32, int32, int32, error) {
 	var assignedCredit [3]int32
 	amount := investment / 100
 	availableCredit := [3]int32{3, 5, 7}

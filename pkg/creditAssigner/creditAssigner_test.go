@@ -10,8 +10,9 @@ func TestAssignNoValidCombination(t *testing.T) {
 	assert := assert.New(t)
 
 	var target int32 = 400
+	creditAssigner := CreditAssigner{}
 
-	a1, a2, a3, err := Assign(target)
+	a1, a2, a3, err := creditAssigner.Assign(target)
 
 	var ex1, ex2, ex3 int32 = 0, 0, 0
 
@@ -25,8 +26,9 @@ func TestAssignValidCombination(t *testing.T) {
 	assert := assert.New(t)
 
 	var target int32 = 6700
+	creditAssigner := CreditAssigner{}
 
-	a1, a2, a3, err := Assign(target)
+	a1, a2, a3, err := creditAssigner.Assign(target)
 
 	var ex1, ex2, ex3 int32 = 2, 1, 8
 

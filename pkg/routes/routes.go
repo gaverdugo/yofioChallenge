@@ -26,15 +26,17 @@ func creditAssignmentPOST(c *gin.Context) {
 		return
 	}
 
-	if investment.Investment == 0 || investment.Investment%100 != 0 {
-		c.JSON(http.StatusBadRequest, "{}")
+	if investment.Investment <= 0 || investment.Investment%100 != 0 {
+		c.JSON(http.StatusBadRequest, map[string]string{"error": "input not valid"})
 		return
 	}
 
-	assigned1, assigned2, assigned3, err := creditassigner.Assign(investment.Investment)
+	var creditAssignerM CreditAssigner = creditassigner.CreditAssigner{}
+
+	assigned1, assigned2, assigned3, err := creditAssignerM.Assign(investment.Investment)
 
 	if err != nil {
-		c.JSON(http.StatusBadRequest, "{}")
+		c.JSON(http.StatusBadRequest, map[string]string{"error": err.Error()})
 		return
 	}
 
